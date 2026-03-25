@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [react()],
   base: '/mediqueueless-website/',
   build: {
-    outDir: 'dist',
+    outDir: 'docs',
     assetsDir: 'assets',
     emptyOutDir: true,
   }
