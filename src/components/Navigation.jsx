@@ -16,7 +16,7 @@ const Navigation = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
     }
-    
+
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -25,20 +25,20 @@ const Navigation = () => {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         <div className="navbar-logo">
-          <img 
-            src="/high-resolution-logo-grayscale.png" 
-            alt="Mediqueueless Logo" 
+          <img
+            src="/high-resolution-logo-grayscale.png"
+            alt="Mediqueueless Logo"
             className="logo-img"
             loading="eager"
           />
         </div>
-        
-        <button 
+
+        <button
           className="mobile-menu-toggle"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
         >
-          ☰
+          Menu
         </button>
 
         <ul className={`nav-menu ${mobileMenuOpen ? 'active' : ''}`}>

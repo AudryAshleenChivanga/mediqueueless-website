@@ -49,7 +49,7 @@ const Solution = () => {
       subtitle: 'Complete digital platform',
       description: 'We provide an end-to-end digital solution for hospitals',
       icon: 'building',
-      details: ['Complete platform', 'From scratch deployment', 'Full training & support']
+      details: ['Complete platform', 'From scratch deployment', 'Full training and support']
     },
     {
       title: 'USSD Access',
@@ -65,9 +65,9 @@ const Solution = () => {
       <div className="container">
         <h2>A solution tailored to every hospital</h2>
         <p className="section-subtitle">
-          Mediqueueless doesn't offer one-size-fits-all solutions. We assess your hospital's infrastructure, patient volume, and needs, then deploy the right model.
+          Mediqueueless does not offer one-size-fits-all solutions. We assess your hospital&apos;s infrastructure, patient volume, and needs, then deploy the right model.
         </p>
-        
+
         <div className="solutions-grid">
           {solutions.map((solution, index) => (
             <div key={index} className="solution-card observe">
@@ -78,7 +78,7 @@ const Solution = () => {
               <ul className="solution-details">
                 {solution.details.map((detail, i) => (
                   <li key={i}>
-                    <span className="checkmark">✓</span>
+                    <span className="checkmark">+</span>
                     {detail}
                   </li>
                 ))}
@@ -92,22 +92,22 @@ const Solution = () => {
           <div className="flow-diagram">
             <div className="flow-item">
               <div className="flow-step">1</div>
-              <p><strong>Assess</strong><br/>Infrastructure, volume, connectivity</p>
+              <p><strong>Assess</strong><br />Infrastructure, volume, connectivity</p>
             </div>
             <div className="flow-arrow">{getIcon('arrow')}</div>
             <div className="flow-item">
               <div className="flow-step">2</div>
-              <p><strong>Recommend</strong><br/>Integration, Full, or USSD</p>
+              <p><strong>Recommend</strong><br />Integration, Full, or USSD</p>
             </div>
             <div className="flow-arrow">{getIcon('arrow')}</div>
             <div className="flow-item">
               <div className="flow-step">3</div>
-              <p><strong>Deploy</strong><br/>Fast, reliable implementation</p>
+              <p><strong>Deploy</strong><br />Fast, reliable implementation</p>
             </div>
             <div className="flow-arrow">{getIcon('arrow')}</div>
             <div className="flow-item">
               <div className="flow-step">4</div>
-              <p><strong>Optimize</strong><br/>Continuous improvement</p>
+              <p><strong>Optimize</strong><br />Continuous improvement</p>
             </div>
           </div>
         </div>

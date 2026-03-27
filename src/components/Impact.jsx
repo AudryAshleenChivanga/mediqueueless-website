@@ -18,8 +18,8 @@ const Impact = () => {
       icon: 'smartphone'
     },
     {
-      number: '∞',
-      label: 'Scalability - from clinic to hospital',
+      number: 'Any scale',
+      label: 'From clinic to hospital deployment',
       icon: 'expand'
     }
   ]
@@ -60,7 +60,7 @@ const Impact = () => {
         <p className="section-subtitle">
           Transforming healthcare systems across Africa
         </p>
-        
+
         <div className="stats-grid">
           {stats.map((stat, index) => (
             <div key={index} className="stat-card observe">
@@ -80,7 +80,7 @@ const Impact = () => {
               </svg>
               <div>
                 <h4>Tailored solutions</h4>
-                <p>One size doesn't fit all in African healthcare</p>
+                <p>One size does not fit all in African healthcare</p>
               </div>
             </div>
             <div className="impact-point">

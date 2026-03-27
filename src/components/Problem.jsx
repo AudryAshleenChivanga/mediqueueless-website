@@ -66,9 +66,9 @@ const Problem = () => {
       <div className="container">
         <h2>Waiting time is a system problem</h2>
         <p className="section-subtitle">
-          Long waiting times in African hospitals aren't just inconvenient—they're a symptom of deeper system challenges
+          Long waiting times in African hospitals are not just inconvenient. They are a visible symptom of deeper system challenges.
         </p>
-        
+
         <div className="problems-grid">
           {problems.map((problem, index) => (
             <div key={index} className="problem-card observe">

@@ -47,26 +47,26 @@ const ForPatients = () => {
         <p className="section-subtitle">
           Simple, accessible, and centered on your needs
         </p>
-        
+
         <div className="patient-benefits-grid">
           <div className="patient-benefit observe">
             <div className="benefit-icon">{getIcon('timer')}</div>
             <h3>Less Waiting</h3>
             <p>Book your time, come prepared, skip the lines</p>
           </div>
-          
+
           <div className="patient-benefit observe">
             <div className="benefit-icon">{getIcon('control')}</div>
             <h3>More Control</h3>
             <p>Manage appointments on your own schedule</p>
           </div>
-          
+
           <div className="patient-benefit observe">
             <div className="benefit-icon">{getIcon('smartphone')}</div>
             <h3>Multiple Access</h3>
-            <p>App, USSD, phone—whatever works for you</p>
+            <p>App, USSD, or phone, whatever works best for you</p>
           </div>
-          
+
           <div className="patient-benefit observe">
             <div className="benefit-icon">{getIcon('globe')}</div>
             <h3>Accessible Everywhere</h3>
@@ -75,7 +75,7 @@ const ForPatients = () => {
         </div>
 
         <div className="patient-story observe">
-          <h3>A patient's experience</h3>
+          <h3>A patient&apos;s experience</h3>
           <div className="story-timeline">
             <div className="story-point">
               <div className="story-marker">Mon</div>

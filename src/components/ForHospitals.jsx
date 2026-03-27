@@ -53,9 +53,9 @@ const ForHospitals = () => {
       <div className="container">
         <h2>Built for hospitals, from the ground up</h2>
         <p className="section-subtitle">
-          We understand African hospitals. That's why we offer flexible solutions that work with your reality.
+          We understand African hospitals. That&apos;s why we offer flexible solutions that work with your reality.
         </p>
-        
+
         <div className="hospital-models">
           {models.map((model, index) => (
             <div key={index} className="hospital-model-card observe">
@@ -65,7 +65,7 @@ const ForHospitals = () => {
               <ul className="model-benefits">
                 {model.benefits.map((benefit, i) => (
                   <li key={i}>
-                    <span className="benefit-dot">•</span>
+                    <span className="benefit-dot">+</span>
                     {benefit}
                   </li>
                 ))}

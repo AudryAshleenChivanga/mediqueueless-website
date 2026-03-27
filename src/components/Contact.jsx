@@ -12,7 +12,7 @@ const Contact = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [name]: value
     }))
@@ -20,35 +20,34 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    
-    // Send email via FormSubmit
+
     const formElement = e.target
     const submitData = new FormData(formElement)
-    
+
     fetch('https://formsubmit.co/mediqueueless.ltd@gmail.com', {
       method: 'POST',
       body: submitData,
       headers: {
-        'Accept': 'application/json'
+        Accept: 'application/json'
       }
     })
-    .then(response => {
-      if (response.ok) {
-        setSubmitted(true)
-        setTimeout(() => {
-          setSubmitted(false)
-          setFormData({
-            name: '',
-            email: '',
-            organization: '',
-            hospitalType: '',
-            message: ''
-          })
-          formElement.reset()
-        }, 3000)
-      }
-    })
-    .catch(error => console.error('Error:', error))
+      .then((response) => {
+        if (response.ok) {
+          setSubmitted(true)
+          setTimeout(() => {
+            setSubmitted(false)
+            setFormData({
+              name: '',
+              email: '',
+              organization: '',
+              hospitalType: '',
+              message: ''
+            })
+            formElement.reset()
+          }, 3000)
+        }
+      })
+      .catch((error) => console.error('Error:', error))
   }
 
   return (
@@ -56,21 +55,20 @@ const Contact = () => {
       <div className="container">
         <h2>Ready to transform your hospital?</h2>
         <p className="section-subtitle">
-          Let's discuss how Mediqueueless can work for your hospital
+          Let&apos;s discuss how Mediqueueless can work for your hospital
         </p>
 
         <div className="contact-content">
           <div className="contact-form-container observe">
             {submitted ? (
               <div className="success-message">
-                <h3>✓ Thank you!</h3>
-                <p>We'll be in touch soon to discuss your hospital's needs.</p>
+                <h3>Thank you!</h3>
+                <p>We&apos;ll be in touch soon to discuss your hospital&apos;s needs.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="contact-form">
-                {/* Hidden field for FormSubmit to redirect after submit */}
                 <input type="hidden" name="_captcha" value="false" />
-                
+
                 <div className="form-group">
                   <label htmlFor="name">Your Name *</label>
                   <input
@@ -148,14 +146,14 @@ const Contact = () => {
             <div className="info-block">
               <h3>Get in touch</h3>
               <p>
-                Whether you're interested in learning more about our solutions or ready to deploy, we're here to help.
+                Whether you&apos;re interested in learning more about our solutions or ready to deploy, we&apos;re here to help.
               </p>
             </div>
 
             <div className="info-block">
               <h4>Why book a demo?</h4>
               <ul>
-                <li>Understand your hospital's unique needs</li>
+                <li>Understand your hospital&apos;s unique needs</li>
                 <li>See which solution is right for you</li>
                 <li>Get a timeline and pricing information</li>
                 <li>Discuss integration and support options</li>
