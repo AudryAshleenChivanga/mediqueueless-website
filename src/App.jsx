@@ -183,10 +183,10 @@ function App() {
         <section className="hero" id="home">
           <div className="container hero-layout">
             <div className="hero-copy reveal">
-              <p className="section-label">Patient flow infrastructure</p>
-              <h1>Helping hospitals deliver care, not queues.</h1>
+              <p className="section-label">Helping healthcare facilities deliver care, not queues.</p>
+              <h1>Patient flow intelligence for African hospitals.</h1>
               <p>
-                Coordinate appointments, patient arrivals, departments, and resources from one platform designed for African healthcare systems. Minimizing patient waiting times.
+                Mediqueueless helps care teams coordinate appointments, arrivals, departments, and resources through one calm operating layer.
               </p>
               <div className="hero-buttons">
                 <button className="primary-button" onClick={() => scrollTo('contact')}>Book a Demo</button>
