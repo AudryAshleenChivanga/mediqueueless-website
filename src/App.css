@@ -21,11 +21,13 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   min-width: 320px;
+  overflow-x: hidden;
   background: var(--bg);
   color: var(--text);
   font-family: 'Inter', sans-serif;
@@ -49,12 +51,18 @@ a {
 }
 
 .app {
-  overflow: clip;
+  width: 100%;
+  overflow-x: clip;
 }
 
 .container {
   width: min(var(--container), calc(100% - 48px));
   margin: 0 auto;
+}
+
+img,
+video {
+  max-width: 100%;
 }
 
 .reveal {
@@ -251,7 +259,7 @@ p {
 
 .hero-layout {
   display: grid;
-  grid-template-columns: minmax(0, 0.82fr) minmax(460px, 1.18fr);
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
   gap: clamp(2.4rem, 5vw, 5.2rem);
   align-items: center;
 }
@@ -262,6 +270,7 @@ p {
   gap: 1.05rem;
   align-items: flex-start;
   padding-top: 0.5rem;
+  min-width: 0;
 }
 
 .hero-copy > p:not(.section-label) {
@@ -283,6 +292,7 @@ p {
   gap: 1rem;
   min-height: auto;
   border-radius: 30px;
+  min-width: 0;
 }
 
 .hero-media > video {
@@ -327,7 +337,7 @@ p {
 
 .command-grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.85fr 0.85fr;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.85fr) minmax(0, 0.85fr);
   gap: 0.62rem;
 }
 
@@ -466,6 +476,7 @@ section {
   flex-wrap: wrap;
   justify-content: flex-end;
   max-width: 520px;
+  max-width: min(520px, calc(100% - 24px));
 }
 
 .vision-tags span {
@@ -547,7 +558,7 @@ section {
 
 .image-break-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
   gap: clamp(2rem, 5vw, 4rem);
   align-items: center;
 }
@@ -596,7 +607,7 @@ section {
 
 .ai-layout {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: clamp(2rem, 5vw, 4rem);
   align-items: center;
 }
@@ -648,7 +659,7 @@ section {
 
 .contact-layout {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: clamp(2rem, 5vw, 4rem);
   align-items: start;
   padding: clamp(1.4rem, 4vw, 3rem);
@@ -827,16 +838,25 @@ section {
   }
 
   h1 {
-    font-size: clamp(3rem, 15vw, 4.7rem);
+    font-size: clamp(2.45rem, 11.5vw, 3.65rem);
+    line-height: 1.03;
   }
 
   h2 {
-    font-size: clamp(2.1rem, 10vw, 3.2rem);
+    font-size: clamp(2rem, 9vw, 3rem);
   }
 
   .hero {
     min-height: auto;
-    padding: 8.5rem 0 4rem;
+    padding: 8.25rem 0 4rem;
+  }
+
+  .hero-copy {
+    padding-top: 0;
+  }
+
+  .hero-copy > p:not(.section-label) {
+    font-size: 0.98rem;
   }
 
   .hero-buttons,
@@ -850,14 +870,28 @@ section {
   }
 
   .hero-media > video {
-    height: 440px;
+    width: 100%;
+    height: clamp(300px, 78vw, 430px);
     min-height: 0;
     border-radius: 22px;
   }
 
   .command-center {
-    width: calc(100% - 18px);
+    width: calc(100% - 12px);
     margin-top: -2.6rem;
+    border-radius: 18px;
+  }
+
+  .command-grid {
+    gap: 0.5rem;
+  }
+
+  .command-card {
+    min-height: auto;
+  }
+
+  .wave-bars {
+    height: 38px;
   }
 
   .command-grid,
@@ -904,7 +938,7 @@ section {
 
   .vision-content h2 {
     max-width: 520px;
-    font-size: clamp(2.4rem, 11vw, 3.7rem);
+    font-size: clamp(2.15rem, 9.8vw, 3.25rem);
   }
 
   .vision-content p:not(.section-label) {
@@ -919,6 +953,18 @@ section {
     justify-content: flex-start;
   }
 
+  .vision-tags span {
+    min-height: 38px;
+    padding: 0 0.82rem;
+    font-size: 0.78rem;
+  }
+
+  .flow-map article,
+  .outcome-grid article,
+  .proof-grid article {
+    transform: none;
+  }
+
   .image-break img {
     min-height: 340px;
     border-radius: 20px;
@@ -926,6 +972,45 @@ section {
 
   .contact-layout {
     border-radius: 20px;
+  }
+}
+
+@media (max-width: 430px) {
+  .container,
+  .nav-shell,
+  .vision-content {
+    width: min(var(--container), calc(100% - 20px));
+  }
+
+  .logo-button {
+    width: 154px;
+    height: 50px;
+  }
+
+  .logo-button img {
+    width: 154px;
+    height: 50px;
+  }
+
+  .hero {
+    padding-top: 7.6rem;
+  }
+
+  .section-label {
+    font-size: 0.72rem;
+  }
+
+  .command-top {
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .command-top span {
+    max-width: 210px;
+  }
+
+  .proof-grid article {
+    font-size: 1.35rem;
   }
 }
 
