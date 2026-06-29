@@ -271,6 +271,18 @@ function App() {
     }, { threshold: 0.14 })
 
     document.querySelectorAll('.reveal').forEach((element) => observer.observe(element))
+
+    document.querySelectorAll('video[data-autoplay-video]').forEach((videoElement) => {
+      videoElement.muted = true
+      videoElement.defaultMuted = true
+      videoElement.playsInline = true
+      const playPromise = videoElement.play()
+
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {})
+      }
+    })
+
     return () => observer.disconnect()
   }, [])
 
@@ -308,11 +320,14 @@ function App() {
           <div className="container preparation-layout">
             <div className="preparation-media reveal">
               <video
+                data-autoplay-video="true"
                 src={video}
                 autoPlay
                 muted
+                defaultMuted
                 loop
                 playsInline
+                preload="auto"
                 poster="/vision.png"
                 aria-label="Mediqueueless healthcare technology overview"
               />
